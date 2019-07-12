@@ -1,17 +1,21 @@
-pipeline{
-  agent any
+pipeline {
+    agent any
 
-  stages{
-    stage("Setup"){
-      steps {
-        echo "Hello Ansible"
-        sh "date"
+    stages {
+        stage('Build') {
+            steps {
+                echo 'Building..'
+            }
         }
-      }
-    stage("Configure"){
-      steps {
-        sh "cp Jenkinsfile test.txt"
+        stage('Test') {
+            steps {
+                echo 'Testing..'
+            }
+        }
+        stage('Deploy') {
+            steps {
+                echo 'Deploying....'
+            }
+        }
     }
-  }
-}
 }
